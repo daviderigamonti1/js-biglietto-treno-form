@@ -8,18 +8,27 @@
     <title>Biglietto treno</title>
 </head>
 <body>
-    <form id="login">
-        <div class="form-group">
-            <label for="age">Inserisci la tua età</label>
-            <input type="number" class="form-control" id="age" placeholder="Inserisci l'età" required>
+    <form class="mt-5 container bg-white" id="login">
+        <div class="row pt-3">
+            <div class="col-4">
+                <label for="name">Inserisci nome e cognome</label>
+                <input type="text" class="form-control" id="name" placeholder="Nome e cognome">
+            </div>
+            <div class="col-4 form-group">
+                <label for="age">Inserisci la tua età</label>
+                <input type="number" class="form-control" id="age" placeholder="Età" required>
+            </div>
+            <div class="col-4 form-group">
+                <label for="km">Inserisci i chilometri da percorrere</label>
+                <input type="number" class="form-control" id="km" placeholder="Km da percorrere" required>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="km">Inserisci i chilometri da percorrere</label>
-            <input type="number" class="form-control" id="km" placeholder="Inserisci i chilometri" required>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="m-5 btn btn-primary">Invia</button>
+            <button type="reset" class="m-5">Cancella</button>
         </div>
-        <button type="button" class="btn btn-primary">Invia</button>
     </form>
-    <div id="result"></div>
+    <div id="result" class="container bg-white"></div>
     
 
     <script src="script/script.js"></script>

@@ -13,22 +13,34 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 "use strict";
 console.clear();
 
-const age = parseInt(document.getElementById("age").value);
-const km = parseInt(document.getElementById("km").value);
-let basePrice = 0.21 * km;
-let price;
+// refs - nodi HTML
+const age = document.getElementById("age");
+const km = document.getElementById("km");
+const login = document.getElementById("login");
+console.log(login);
 
-if (age < 18) {
-    //Sconto del 20%
-    price = basePrice * 0.8;
-} else if (age >= 65) {
-    //Sconto del 40%
-    price = basePrice * 0.6;
-} else {
-    price = basePrice;
-}
+// Attesa di interazione utente - invio form
+login.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const ageValue = parseInt(age.value);
+    const kmValue = parseInt(km.value);
+    let basePrice = 0.21 * kmValue;
+    let price;
+    
+    if (ageValue < 18) {
+        //Sconto del 20%
+        price = basePrice * 0.8;
+    } else if (ageValue >= 65) {
+        //Sconto del 40%
+        price = basePrice * 0.6;
+    } else {
+        price = basePrice;
+    }
+    
+    document.getElementById("result").innerText = `Prezzo biglietto: ${price.toFixed(2)}€`;
+    
+})
 
-document.getElementById("result").innerText = `Prezzo biglietto: ${price.toFixed(2)}€`;
 
 
 
