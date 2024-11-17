@@ -17,7 +17,8 @@ console.clear();
 const age = document.getElementById("age");
 const km = document.getElementById("km");
 const login = document.getElementById("login");
-console.log(login);
+const name = document.getElementById("name");
+let offert = document.getElementById("offert")
 
 // Attesa di interazione utente - invio form
 login.addEventListener('submit', function(event) {
@@ -26,21 +27,22 @@ login.addEventListener('submit', function(event) {
     const kmValue = parseInt(km.value);
     let basePrice = 0.21 * kmValue;
     let price;
+    let display;
     
     if (ageValue < 18) {
         //Sconto del 20%
         price = basePrice * 0.8;
+        document.getElementById("offert").innerText = "Biglietto Junior";
     } else if (ageValue >= 65) {
         //Sconto del 40%
         price = basePrice * 0.6;
+        document.getElementById("offert").innerText = "Biglietto Senior";
     } else {
         price = basePrice;
+        document.getElementById("offert").innerText = "Biglietto Standard";
     }
     
-    document.getElementById("result").innerText = `Prezzo biglietto: ${price.toFixed(2)}€`;
+    document.getElementById("passenger").innerText = `${name.value}`;
+    document.getElementById("result").innerText = `${price.toFixed(2)}€`;
     
 })
-
-
-
-
